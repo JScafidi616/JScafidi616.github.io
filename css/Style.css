@@ -118,7 +118,7 @@ h1.Title_H1 {
     margin: 10px 5px 10px 5px;
     height: 200px;
     width: 200px;
-    background-color: #00a2ea;
+    background-color: rgb(0, 162, 234);
     border-radius: 5px;
     vertical-align: middle;
 }
