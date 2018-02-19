@@ -27,6 +27,7 @@ img {
     display: block;
     top: 100px;
 }
+
 div#nav {
     background-color: rgb(0, 162, 234);
     box-shadow: 0px 8px 20px #252525;
@@ -51,6 +52,7 @@ ul {
     height: 70px;
     /* box-shadow: 0px 10px 10px #252525; */
     position: relative;
+    max-width: 800px;
 }
 li {
     float: left;
