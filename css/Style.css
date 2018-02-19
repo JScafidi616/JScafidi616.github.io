@@ -90,7 +90,7 @@ h1.Title_H1 {
 
 #page1 {
     background-color: #013243;
-    height: 500px;
+    height: auto;
 }
 
 #page2 {
@@ -100,6 +100,34 @@ h1.Title_H1 {
 #Footer {
     height: 500px;
     background-color: #013243;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+    height: auto;
+    line-height: 220px;
+    /*background-color: #ff00004f;*/
+    padding: 70px 10px 70px 10px;
+    justify-content: center;
+}
+
+.wrapper #BoxContainer {
+    order: 1;
+    margin: 10px 5px 10px 5px;
+    height: 200px;
+    width: 200px;
+    background-color: #b6b8e49c;
+    border-radius: 5px;
+    vertical-align: middle;
+}
+
+.wrapper .Box1 {
+}
+.wrapper .Box2 {
+}
+.wrapper .Box3 {
 }
 
 /* Responsive layouts */
