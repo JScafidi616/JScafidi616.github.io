@@ -5,6 +5,9 @@ body{
     "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", 
     "Segoe UI Symbol";
 }
+
+
+/** Header style **/
 .Header {
     position: static;
     left: 0px;
@@ -27,22 +30,15 @@ img {
     display: block;
     top: 100px;
 }
+
+
+/** Nav bar-Section **/
 div#nav {
     background-color: rgb(0, 162, 234);
     box-shadow: 0px 8px 20px #252525;
     position: relative;
     display: flex;
     justify-content: center;
-}
-
-/*unused*/
-.nav {
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    padding: 20px 0px 20px 0px;
-    margin: 0 auto;
-    top: 600px;
 }
 ul {
     list-style-type: none;
@@ -76,6 +72,8 @@ h1.Title_H1 {
     bottom: 150px;
     /* top: 105px; */
 }
+
+/** Content Areas **/
 .content-1 {
     background-color: #131313;
     height: 500px;
@@ -94,9 +92,14 @@ h1.Title_H1 {
     height: auto;
 }
 #Footer {
-    height: 500px;
+    height: 170px;
     background-color: #013243;
+    position: static;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 }
+
 h2#P1_Title {
     position: relative;
     top: 40px;
@@ -112,7 +115,6 @@ h2#P1_Title {
     text-align: center;
     height: auto;
     line-height: 220px;
-    /*background-color: #ff00004f;*/
     padding: 70px 10px 70px 10px;
     justify-content: center;
 }
@@ -175,21 +177,48 @@ img#Page1_Img:hover {
     color: #ffffff;
     margin: 0px 90px;
 }
-
 img#Page2_Img {
     border-radius: 50%;
+    margin: 50px 0px 0 0;
 }
-
 p#Paragraph {
     line-height: 1.5;
     font-weight: 600;
     justify-content: center;
     display: inline-block;
-    width: 252px;
-    text-align: justify;
-    padding: 0px 10px 0 10px;
+    width: 250px;
+    text-align: center;
+    /*padding: 0px 10px 0 10px;*/
 }
 
+
+/** Footer inside-Section **/
+div#footer-1 {
+    background-color: rgb(0, 34, 45);
+    height: 35px;
+    padding: 10px;
+    margin: 0 0px 0 0;
+    align-self: flex-end;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+p.float-right {
+    text-align: right;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    float: right !important;
+}
+p.float-left {
+    text-align: left;
+    margin-bottom: 1rem;
+    margin-top: 6px;
+    color: #00a2ea;
+}
+a {
+    color: #00a2ea;
+}
 
 
 
