@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Joseph Scafidi - Programmer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-ico" href="src/Assets/Favicon.ico"/>
+    <link rel="stylesheet" href="css/Style.css" > 
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+    <a id="Up" class="smooth"></a>
+    <div class="Header">
+        <img id="img_Logo" src="src/Images/JSLogo2.png" width="550" height="150"/>
+        <h1 class="Title_H1" align="center">Programmer</h1>
+    </div>
+    <div id="nav">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+        </ul>
+    </div>
+    <div id="page1">
+        <a id="about" class="smooth"></a>
+        <h2 id="P1_Title" >Development Areas</h2>
+        <div class="wrapper_P1">
+            <div id="BoxContainer" class="box1">
+                <img id="Page1_Img" src="src/Images/DesktopDev.png" width="200" height="200">
+            </div>
+            <div id="BoxContainer" class="box2">
+                <img id="Page1_Img" src="src/Images/DBDev.png" width="200" height="200">
+            </div>
+            <div id="BoxContainer" class="box3">
+                <img id="Page1_Img" src="src/Images/WebDev.png" width="200" height="200">
+            </div>
+        </div>
+    </div>
+    <div id="page2">
+        <a id="portfolio" class="smooth"></a>
+        <div class="wrapper_P2">
+            <div id="BoxContainer" class="Profile">
+                <div class="Shadow_Frame">
+                    <img id="Profile" src="src/Images/JS.jpg" width="200" height="200">
+                </div>
+            </div>    
+        </div>
+        <div class="wrapper_P3">
+            <div id="BoxContainer" class="box1">
+                <img id="Page2_Img" src="src/Images/CShardC0.png" width="150" height="150">
+            </div>
+            <div id="BoxContainer" class="box2T">
+                <h3 id="TitleP">Joseph Scafidi</h3>
+                <p id="Paragraph">Technician programmer focused on making applications to improve skills and learn about new technologies in the programming applications
+                </p>
+            </div>
+                <div id="BoxContainer" class="box3">
+                    <img id="Page2_Img" src="src/Images/JSC0.png" width="150" height="150">
+                </div>
+            </div>
+    </div>
+    <div id="Footer">
+        <a id="contact" class="smooth"></a>
+        <div id="footer-1">
+            <div class="container">
+                <p class="float-right"><a href="#Up">Back to top</a></p>
+                <p class="float-left">© 2018 Joseph Scafidi. · 
+                <a href="https://github.com/JScafidi616/"><i class="fa fa-github" aria-hidden="true"></i></a> · 
+                <a href="https://www.linkedin.com/in/js-info"><i class="fa fa-linkedin" aria-hidden="true"></i></a></p>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    //Obtenemos elemento al que nos direcciona haciendo click en el boton del nav-bar
+    $('a[href^="#"]').on('click', function(event) {
+        var target = $(this.getAttribute('href'));
+        if( target.length ) {
+            event.preventDefault();
+            $('html, body').stop().animate({
+                scrollTop: target.offset().top
+            }, 1000);
+        }
+    });
+    </script>
+</footer>
+</html>
