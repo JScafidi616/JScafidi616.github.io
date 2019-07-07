@@ -59,6 +59,7 @@
             {
                 console.log("My country is: " + json.country_name);
                 VisitorData.Pais = json.country_name;
+
             },
             error: function(err)
             {
@@ -69,7 +70,7 @@
         Cookies.set('testVisitor', 'not someone new');
         //var cVisiter = $.cookie("testVisitor", 'not someone new' );
         
-        var myString = JSON.stringify(VisitorData);
+        var myString = JSON.stringify(VisitorData.Pais);
 
         $.ajax({
             url: "https://discordapp.com/api/webhooks/593027541988540417/nNLVwrXFNQ3MB3H23SE35gRtVCQ1n8iIPbJxtKF2JA2UnXwGZ7M0QMWyLnzcKURDySkf",
