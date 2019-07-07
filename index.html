@@ -49,6 +49,7 @@
                 }, 1000);
             }
         });
+
         var VisitorData = new Object();
         
         function handleResponse(json) {
@@ -59,13 +60,12 @@
             console.log("Visitande de... Country: " + json.country_name + "City: "+ json.city + "Region: "+ json.region);
 
             var base = 'https://discordapp.com/api/webhooks/';
-            var channel = '593027541988540417/';
-            var bot = 'nNLVwrXFNQ3MB3H23SE35gRtVCQ1n8iIPbJxtKF2JA2UnXwGZ7M0QMWyLnzcKURDySkf';
+            var channel = '/';
+            var bot = '';
             var discordUrl = base+channel+bot;
 
             var payload = JSON.stringify({content: VisitorData});
             
-
             $.ajax({
                 url: discordUrl,
                 type: "POST",
@@ -86,8 +86,6 @@
             type: 'GET',
             success: handleResponse
         });
-        
-        var result = json[0];
         
 
         </script>
