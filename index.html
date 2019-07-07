@@ -52,7 +52,7 @@
         var VisitorData = new Object();
         
         function handleResponse(json) {
-            VisitorData = "Visitande de... Country: " + json.country_name + "City: "+ json.city + "Region: "+ json.region;
+            VisitorData = "Visitande de... Pais: " + json.country_name + " Ciudad: "+ json.city + " Region: "+ json.region;
             //set a cookie of the visitor 
             Cookies.set('testVisitor', 'not someone new');
             //var cVisiter = $.cookie("testVisitor", 'not someone new' );
