@@ -58,11 +58,11 @@
             //var cVisiter = $.cookie("testVisitor", 'not someone new' );
             console.log("My country is: " + json.country_name);
             $.ajax({
-                url: "https://discordapp.com/api/webhooks/593027541988540417/nNLVwrXFNQ3MB3H23SE35gRtVCQ1n8iIPbJxtKF2JA2UnXwGZ7M0QMWyLnzcKURDySkf",
+                url: "",
                 type: "POST",
-                data: {"Content":VisitorData},
+                data: {"content":VisitorData},
                 headers: {'Content-Type': 'application/json'},
-                success: function(){
+                success: function(data){
                     console.log("Success")},
                 error: function(err){
                     console.log("Request failed, error= " + err);
