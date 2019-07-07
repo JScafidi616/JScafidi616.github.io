@@ -49,26 +49,34 @@
                 }, 1000);
             }
         });
-        
+        var VisitorData = new Object();
+        //get localization of the visitor
         var requestUrl = "https://api.ipdata.co?api-key=test";
-
         $.ajax({
             url: requestUrl,
             type: 'GET',
             success: function(json)
             {
                 console.log("My country is: " + json.country_name);
+                VisitorData.Pais = json.country_name;
             },
             error: function(err)
             {
                 console.log("Request failed, error= " + err);
             }
         });
+        //set a cookie of the visitor 
         Cookies.set('testVisitor', 'not someone new');
         var cVisiter = $.cookie("testVisitor", 'not someone new' );
         
-        
+        var myString = JSON.stringify(VisitorData);
 
+        $.ajax({
+        url: "https://discordapp.com/api/webhooks/593027541988540417/nNLVwrXFNQ3MB3H23SE35gRtVCQ1n8iIPbJxtKF2JA2UnXwGZ7M0QMWyLnzcKURDySkf",
+        type: "POST",
+        data: {"Content":"tienes un visitante de"+ VisitorData.Pais},
+        complete: function(){alert("Success")}
+        });
 
 
         </script>
