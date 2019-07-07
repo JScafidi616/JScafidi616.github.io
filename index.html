@@ -52,7 +52,7 @@
         var VisitorData = new Object();
         
         function handleResponse(json) {
-            VisitorData = json.country_name;
+            VisitorData = "tienes un visitante de"+json.country_name;
             //set a cookie of the visitor 
             Cookies.set('testVisitor', 'not someone new');
             //var cVisiter = $.cookie("testVisitor", 'not someone new' );
@@ -60,7 +60,7 @@
             $.ajax({
                 url: "https://discordapp.com/api/webhooks/593027541988540417/nNLVwrXFNQ3MB3H23SE35gRtVCQ1n8iIPbJxtKF2JA2UnXwGZ7M0QMWyLnzcKURDySkf",
                 type: "POST",
-                data: {"Content":"tienes un visitante de"+ json.country_name},
+                data: {"data":VisitorData},
                 complete: function(){alert("Success")},
                 error: function(err)
                 {
