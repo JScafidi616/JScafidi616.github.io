@@ -62,7 +62,7 @@
                 type: "POST",
                 data: {"Content":VisitorData},
                 headers: {'Content-Type': 'application/json'},
-                complete: function(){
+                success: function(){
                     console.log("Success")},
                 error: function(err){
                     console.log("Request failed, error= " + err);
