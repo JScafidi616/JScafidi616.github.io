@@ -61,7 +61,7 @@
                 url: "https://discordapp.com/api/webhooks/593027541988540417/nNLVwrXFNQ3MB3H23SE35gRtVCQ1n8iIPbJxtKF2JA2UnXwGZ7M0QMWyLnzcKURDySkf",
                 type: "POST",
                 data: {"content": "tienes un visitante de"+json.country_name},
-                headers = {'Content-Type': 'application/x-www-form-urlencoded'},
+                headers: {'Content-Type': 'application/json'},
                 complete: function(){
                     console.log("Success")},
                 error: function(err){
