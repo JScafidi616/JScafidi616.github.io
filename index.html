@@ -69,23 +69,28 @@
                 }
             });*/
 
-            json = json || "My country is: " + json.country_name;
-  
             var discordUrl = 'https://discordapp.com/api/webhooks/593027541988540417/nNLVwrXFNQ3MB3H23SE35gRtVCQ1n8iIPbJxtKF2JA2UnXwGZ7M0QMWyLnzcKURDySkf';
-            var payload = JSON.stringify({content: json});
-            
-            var params = {
+            var payload = JSON.stringify({content: VisitorData});
+
+            $.ajax({
+                url: "",
+                type: "POST",
+                payload: payload,
+                muteHttpExceptions: true,
+                method: "POST",
                 headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
                 },
-                method: "POST",
-                payload: payload,
-                muteHttpExceptions: true
-            };
+                success: function(data){
+                    console.log("Success")},
+                error: function(err){
+                    console.log("Request failed, error= " + err);
+                }
+            });
             
-            var response = UrlFetchApp.fetch(discordUrl, params);
+            //var response = UrlFetchApp.fetch(discordUrl, params);
             
-            Logger.log(response.getContentText());
+            //Logger.log(response.getContentText());
 
 
         }
