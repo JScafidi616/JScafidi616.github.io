@@ -50,15 +50,16 @@
             }
         });
         var VisitorData = new Object();
+        
         //get localization of the visitor
         var requestUrl = "https://api.ipdata.co?api-key=test";
         $.ajax({
             url: requestUrl,
+            data : your_data,
             type: 'GET',
             success: function(json)
             {
                 console.log("My country is: " + json.country_name);
-                VisitorData.Pais = json.country_name;
 
             },
             error: function(err)
@@ -66,19 +67,20 @@
                 console.log("Request failed, error= " + err);
             }
         });
+        
+        var result = data[0];
         //set a cookie of the visitor 
         Cookies.set('testVisitor', 'not someone new');
         //var cVisiter = $.cookie("testVisitor", 'not someone new' );
         
-        var myString = JSON.stringify(VisitorData.Pais);
+        //var myString = JSON.stringify(VisitorData.Pais);
 
         $.ajax({
             url: "https://discordapp.com/api/webhooks/593027541988540417/nNLVwrXFNQ3MB3H23SE35gRtVCQ1n8iIPbJxtKF2JA2UnXwGZ7M0QMWyLnzcKURDySkf",
             type: "POST",
-            data: {"Content":"tienes un visitante de"+ myString},
+            data: {"Content":"tienes un visitante de"+ result},
             complete: function(){alert("Success")}
         });
-
 
         </script>
     </footer>
