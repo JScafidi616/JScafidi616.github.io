@@ -77,9 +77,7 @@
                 url: discordUrl,
                 type: "POST",
                 data: payload,
-                headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-                },
+                contentType: 'application/json',
                 success: function(){
                     console.log("Success")},
                 error: function(err){
