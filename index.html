@@ -49,14 +49,14 @@
             }
         });
         
-        var requestUrl = "http://ip-api.com/json";
+        var requestUrl = "https://api.ipdata.co?api-key=test";
 
         $.ajax({
             url: requestUrl,
             type: 'GET',
             success: function(json)
             {
-                console.log("My country is: " + json.country);
+                console.log("My country is: " + json.country_name);
             },
             error: function(err)
             {
