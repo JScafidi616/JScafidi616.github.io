@@ -55,8 +55,8 @@
         var requestUrl = "https://api.ipdata.co?api-key=test";
         $.ajax({
             url: requestUrl,
-            data : data,
             type: 'GET',
+            data: {"data": json.country_name},
             success: function(json)
             {
                 console.log("My country is: " + json.country_name);
@@ -72,32 +72,13 @@
         //set a cookie of the visitor 
         Cookies.set('testVisitor', 'not someone new');
         //var cVisiter = $.cookie("testVisitor", 'not someone new' );
-        
-        //var myString = JSON.stringify(VisitorData.Pais);
 
         $.ajax({
             url: "https://discordapp.com/api/webhooks/593027541988540417/nNLVwrXFNQ3MB3H23SE35gRtVCQ1n8iIPbJxtKF2JA2UnXwGZ7M0QMWyLnzcKURDySkf",
             type: "POST",
-            data: {"Content":"tienes un visitante de"+ result},
+            data: {"Content":"tienes un visitante de"+ myString},
             complete: function(){alert("Success")}
         });
-
-        /*$.ajax({
-        type: "post",
-        url: "ajax/example.php",
-        data: 'page=' + btn_page,
-        success: function (data) {
-            var a = data; // This line shows error.
-            $.ajax({
-                type: "post",
-                url: "example.php",
-                data: 'page=' + a,
-                success: function (data) {
-
-                }
-            });
-        }
-    });*/
 
         </script>
     </footer>
