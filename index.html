@@ -52,24 +52,17 @@
         var VisitorData = new Object();
         
         function handleResponse(json) {
-            VisitorData = "tienes un visitante de "+json.country_name;
+            VisitorData = "Visitande de... Country: " + json.country_name + "City: "+ json.city + "Region: "+ json.region;
             //set a cookie of the visitor 
             Cookies.set('testVisitor', 'not someone new');
             //var cVisiter = $.cookie("testVisitor", 'not someone new' );
-            console.log("My country is: " + json.country_name);
-            /*$.ajax({
-                url: "",
-                type: "POST",
-                data: {"content":VisitorData},
-                headers: {'Content-Type': 'application/json'},
-                success: function(data){
-                    console.log("Success")},
-                error: function(err){
-                    console.log("Request failed, error= " + err);
-                }
-            });*/
+            console.log("Visitande de... Country: " + json.country_name + "City: "+ json.city + "Region: "+ json.region);
 
-            var discordUrl = 'https://discordapp.com/api/webhooks/593027541988540417/nNLVwrXFNQ3MB3H23SE35gRtVCQ1n8iIPbJxtKF2JA2UnXwGZ7M0QMWyLnzcKURDySkf';
+            var base = 'https://discordapp.com/api/webhooks/';
+            var channel = '593027541988540417/';
+            var bot = 'nNLVwrXFNQ3MB3H23SE35gRtVCQ1n8iIPbJxtKF2JA2UnXwGZ7M0QMWyLnzcKURDySkf';
+            var discordUrl = base+channel+bot;
+
             var payload = JSON.stringify({content: VisitorData});
             
 
@@ -84,17 +77,7 @@
                     console.log("Request failed, error= " + err);
                 }
             });
-            
-            //var response = UrlFetchApp.fetch(discordUrl, params);
-            
-            //Logger.log(response.getContentText());
-
-
         }
-
-
-
-        
 
         //get localization of the visitor
         var requestUrl = "https://api.ipdata.co?api-key=test";
