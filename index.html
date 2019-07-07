@@ -55,7 +55,7 @@
         var requestUrl = "https://api.ipdata.co?api-key=test";
         $.ajax({
             url: requestUrl,
-            data : your_data,
+            data : data,
             type: 'GET',
             success: function(json)
             {
@@ -81,6 +81,23 @@
             data: {"Content":"tienes un visitante de"+ result},
             complete: function(){alert("Success")}
         });
+
+        $.ajax({
+        type: "post",
+        url: "ajax/example.php",
+        data: 'page=' + btn_page,
+        success: function (data) {
+            var a = data; // This line shows error.
+            $.ajax({
+                type: "post",
+                url: "example.php",
+                data: 'page=' + a,
+                success: function (data) {
+
+                }
+            });
+        }
+    });
 
         </script>
     </footer>
