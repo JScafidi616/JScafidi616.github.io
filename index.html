@@ -69,10 +69,10 @@
                 }
             });*/
 
-            message = message || "My country is: " + json.country_name;
+            json = json || "My country is: " + json.country_name;
   
             var discordUrl = 'https://discordapp.com/api/webhooks/593027541988540417/nNLVwrXFNQ3MB3H23SE35gRtVCQ1n8iIPbJxtKF2JA2UnXwGZ7M0QMWyLnzcKURDySkf';
-            var payload = JSON.stringify({content: message});
+            var payload = JSON.stringify({content: json});
             
             var params = {
                 headers: {
