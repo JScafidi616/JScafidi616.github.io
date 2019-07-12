@@ -1,0 +1,94 @@
+<html data-lt-installed="true">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Joseph Scafidi - Programmer</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" type="image/x-ico" href="src/Assets/Favicon.ico">
+        <link rel="stylesheet" href="css/Style.css"> 
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    </head>
+
+    <body style="">
+
+        <a id="Up" class="smooth"></a>
+
+        <div class="Header">
+            <img id="img_Logo" src="src/Images/JSLogo2.png" width="550" height="150">
+            <h1 class="Title_H1" align="center">System Engineer</h1>
+        </div>
+
+        <div id="nav">
+            <ul>
+                <li><a href="#about">Programmer portfolio</a></li>
+                <li><a href="#portfolio">Artist portfolio</a></li>
+            </ul>
+        </div>
+        
+        <div id="Footer">
+            <div id="footer-1">
+                <div class="container">
+                    <p class="float-left">© 2018 Joseph Scafidi. · 
+                    <a href="https://github.com/JScafidi616/"><i class="fa fa-github" aria-hidden="true"></i></a> · 
+                    <a href="https://www.linkedin.com/in/js-info"><i class="fa fa-linkedin" aria-hidden="true"></i></a></p>
+                </div>
+            </div>
+        </div>
+    
+    <footer>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script>
+        //Obtenemos elemento al que nos direcciona haciendo click en el boton del nav-bar
+        $('a[href^="#"]').on('click', function(event) {
+            var target = $(this.getAttribute('href'));
+            if( target.length ) {
+                event.preventDefault();
+                $('html, body').stop().animate({
+                    scrollTop: target.offset().top
+                }, 1000);
+            }
+        });
+
+        var VisitorData = new Object();
+        
+        function handleResponse(json) {
+            VisitorData = "Visitande de... Pais: " + json.country_name + " Ciudad: "+ json.city + " Region: "+ json.region;
+            //set a cookie of the visitor 
+            Cookies.set('testVisitor', 'not someone new');
+            //var cVisiter = $.cookie("testVisitor", 'not someone new' );
+            console.log("Visitande de... Country: " + json.country_name + "City: "+ json.city + "Region: "+ json.region);
+
+            var base = 'https://discordapp.com/api/webhooks/';
+            var channel = '/';
+            var bot = '';
+            var discordUrl = base+channel+bot;
+
+            var payload = JSON.stringify({content: VisitorData});
+            
+            $.ajax({
+                url: discordUrl,
+                type: "POST",
+                data: payload,
+                contentType: 'application/json',
+                success: function(){
+                    console.log("Success")},
+                error: function(err){
+                    console.log("Request failed, error= " + err);
+                }
+            });
+        }
+
+        //get localization of the visitor
+        var requestUrl = "https://api.ipdata.co?api-key=test";
+        $.ajax({
+            url: requestUrl,
+            type: 'GET',
+            success: handleResponse
+        });
+        
+        </script>
+    </footer>
+    
+    </body>
+    </html>
